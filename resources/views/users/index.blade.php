@@ -71,11 +71,13 @@
                                         title="Edit">
                                         <i class="fas fa-edit"></i>
                                     </button>
+                                    @unless ($user->role === 'admin')
+                                        <button class="btn btn-danger btn-sm delete-client" data-id="{{ $user->id }}"
+                                            title="Delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    @endunless
 
-                                    <button class="btn btn-danger btn-sm delete-client" data-id="{{ $user->id }}"
-                                        title="Delete">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
                                 </td>
                             </tr>
                         @endforeach
